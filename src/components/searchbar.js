@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      term: ''
+    };  //  only time we explicitly defined state in the constructor method
+  }
+
   render() {
 
-    return <input className="form-control" onChange={this.onInputChange}/>;
-
+    return (
+        <div>
+          <input
+              value={this.state.term}
+              className="form-control" onChange={ event => this.setState( { term: event.target.value })}/>
+        </div>
+    )
   }
 
-  onInputChange(e) {
-    console.log(e.target.value);
-  }
-}
+} //  end of searchbar
 
 export default SearchBar;
