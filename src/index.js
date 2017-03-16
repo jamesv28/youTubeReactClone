@@ -36,6 +36,6 @@ class App extends Component {
             </div>
         )
     }
-};
+}
 
 ReactDOM.render(< App />, document.querySelector('.container') );
